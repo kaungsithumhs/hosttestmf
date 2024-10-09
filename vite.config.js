@@ -6,18 +6,25 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [
     react(),
-    // federation({
-    //   name: "host",
-    //   filename: "remoteEntry.js",
-    //   remotes: {
-    //     remoteApp: "https://testmf-one.vercel.app/assets/remoteEntry.js",
-    //   },
-    // }),
     federation({
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
         remoteApp: "https://chatbuyer.shopdoora.com/assets/remoteEntry.js",
+      },
+      shared: {
+        react: {
+          singleton: true,
+          requiredVersion: "^18.3.1",
+        },
+        "react-dom": {
+          singleton: true,
+          requiredVersion: "^18.3.1",
+        },
+        zustand: {
+          singleton: true,
+          requiredVersion: "^4.5.5",
+        },
       },
     }),
   ],
