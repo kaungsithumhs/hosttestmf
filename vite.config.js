@@ -21,10 +21,6 @@ export default defineConfig({
           singleton: true,
           requiredVersion: "^18.3.1",
         },
-        zustand: {
-          singleton: true,
-          requiredVersion: "^4.5.5",
-        },
       },
     }),
   ],
